@@ -34,7 +34,7 @@ site at its next build** (most sites build daily).
 | Faculty Development | [stemed-faculty-development](https://github.com/JLib271/stemed-faculty-development) |
 | Deadlines | [stemed-deadlines](https://github.com/JLib271/stemed-deadlines) |
 | Find Collaborators | [stemed-collaborators](https://github.com/JLib271/stemed-collaborators) |
-| HuMeta Library | [HuMeta](https://github.com/JLib271/HuMeta) |
+| HuMeta Library | [humeta-library](https://github.com/JLib271/humeta-library) |
 
 ## Adding a site
 
@@ -76,4 +76,4 @@ python sp_bar.py https://jlib271.github.io/stemed-funding/
 
 This repository was split out of [HuMeta](https://github.com/JLib271/HuMeta), where it lived in
 `standard/stemedplus_theme/`. The shared discipline list (`stemedplus_disciplines.json`) is part of
-the HuMeta standard and stays there.
+the HuMeta profile, in [humeta-profile](https://github.com/JLib271/humeta-profile).
