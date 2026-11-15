@@ -1,16 +1,21 @@
-"""The green STEMEd+ Commons band at the top of every STEMEd+ site.
+"""The green STEMEd+ Commons band at the top of every STEMEd+ site, and the footer at the bottom.
 
 The band copies the menu of https://stemedplus.org (same items, same order, same submenus) so the
 GitHub Pages sites look like part of that site. The menu itself is in menu.json; when the
 stemedplus.org menu changes, change menu.json and every site picks it up on its next build.
 
+The footer copies stemedplus.org's footer (what STEMEd+ Commons is, and its NSF and MSU support);
+its text is the "footer" entry of menu.json.
+
 The band needs no JavaScript: submenus open on hover or keyboard focus, and on narrow screens
 a "Menu" button (a checkbox and its label) opens the whole menu as a list.
 
     python sp_bar.py [current-url] [logo-path]     # print the band's HTML
+    python sp_bar.py --footer                      # print the footer's HTML
 """
 import html
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -31,7 +36,21 @@ def load_menu(path: Path = MENU_FILE) -> dict:
         for entry in [item] + list(item.get("submenu", [])):
             if not entry.get("label") or not str(entry.get("url", "")).startswith("https://"):
                 raise ValueError(f"menu.json: every item needs a label and an https:// url: {entry!r}")
+    footer = menu.get("footer")
+    if not isinstance(footer, str) or not footer.strip():
+        raise ValueError("menu.json: footer must be the footer's HTML")
+    if any(ch in footer for ch in "{}`'\\"):
+        raise ValueError("menu.json: footer must not contain { } ` ' or \\ (sites put it inside code templates)")
+    for href in re.findall(r'href="([^"]*)"', footer):
+        if not href.startswith("https://"):
+            raise ValueError(f"menu.json: footer links must be https:// URLs: {href!r}")
     return menu
+
+
+def footer(menu: dict = None) -> str:
+    """The STEMEd+ Commons footer's HTML, as on stemedplus.org."""
+    menu = menu or load_menu()
+    return f'<footer class="sp-footer"><div class="sp-fin"><p>{menu["footer"]}</p></div></footer>'
 
 
 def bar(current: str = "", logo: str = "stemedplus-commons-logo-white.png", menu: dict = None) -> str:
@@ -65,4 +84,4 @@ def bar(current: str = "", logo: str = "stemedplus-commons-logo-white.png", menu
 
 
 if __name__ == "__main__":
-    print(bar(*sys.argv[1:]))
+    print(footer() if sys.argv[1:] == ["--footer"] else bar(*sys.argv[1:]))

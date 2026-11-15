@@ -28,6 +28,10 @@
       "url": "https://stemedplus.org/stemed-resources/",
       "submenu": [
         {
+          "label": "STEMEd+ Commons FAQ",
+          "url": "https://stemedplus.org/stemed-commons-frequently-asked-questions/"
+        },
+        {
           "label": "The Seekers’ Hub: A Job Board",
           "url": "https://theseekershub.stemedplus.org/"
         },
@@ -52,7 +56,7 @@
           "url": "https://jlib271.github.io/stemed-conferences/"
         },
         {
-          "label": "STEMEd+ Professional Learning",
+          "label": "Professional Learning: K-12, Informal Education",
           "url": "https://jlib271.github.io/stemed-professional-learning/"
         },
         {
@@ -89,23 +93,20 @@
     },
     {
       "label": "Partner with Us",
-      "url": "https://stemedplus.org/collaborate/",
-      "submenu": []
+      "url": "https://stemedplus.org/collaborate/"
     },
     {
       "label": "Contact Us",
-      "url": "https://stemedplus.org/contact-us/",
-      "submenu": []
+      "url": "https://stemedplus.org/contact-us/"
     },
     {
       "label": "Join STEMEd+",
-      "url": "https://stemedplus.org/join-stemed/",
-      "submenu": []
+      "url": "https://stemedplus.org/join-stemed/"
     },
     {
       "label": "Get Started & FAQs",
-      "url": "https://stemedplus.org/stemed-commons-frequently-asked-questions/",
-      "submenu": []
+      "url": "https://stemedplus.org/stemed-commons-frequently-asked-questions/"
     }
-  ]
+  ],
+  "footer": "<strong>This site is part of <a href=\"https://stemedplus.org/\">STEMEd+ Commons</a>, a Commons within <a href=\"https://hcommons.org/\">Knowledge Commons</a>. STEMEd+ Commons brings together STEM+ education communities to collectively build research insights and teaching innovations across disciplines. As an open access platform, STEMEd+ Commons helps ensure STEM+ education research and practice is accessible for all people, in all communities. This material is based upon work supported by the National Science Foundation under grants </strong><a href=\"https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2226271\">OAC-2226271</a><strong>, </strong><a href=\"https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2321946\">DRL-2321946</a><strong>, </strong><a href=\"https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2531819\">OAC-2531819</a> and by Michigan State University through the <a href=\"https://research.msu.edu/find-funding/msu-funding-opportunities/jenison-support\">Jenison Fund</a>."
 }

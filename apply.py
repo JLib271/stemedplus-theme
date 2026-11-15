@@ -17,7 +17,12 @@ The site lists what to update in `.stemedplus-theme.json` at its root:
   folder is replaced with the current one; files the site does not use are not added.
 - `bars`: files that contain the green band. Each band is rebuilt from menu.json, with the
   site's own menu item (`current`) marked. `logo` is the image path written into the band
-  (default `stemedplus-commons-logo-white.png`).
+  (default `stemedplus-commons-logo-white.png`). The same page also gets the STEMEd+ Commons
+  footer, as on stemedplus.org: it is refreshed if the file has one, and otherwise added just
+  before the first `</body>` after the band (below the site's own footer). Set `"footer": false`
+  on a bar to leave its page without one. In a Python file, if adding it there would break the
+  code (the page is built from short strings), put an empty slot,
+  `<footer class="sp-footer"></footer>`, where the footer belongs; it is filled in from then on.
 
 Nothing is written unless every file can be updated, so a problem leaves the site's own copies
 as they were. Exit status 1 means nothing changed.
@@ -34,8 +39,21 @@ import sp_bar  # noqa: E402
 
 ASSETS = HERE / "assets"
 CONFIG = ".stemedplus-theme.json"
+FOOTER = re.compile(r'<footer class="sp-footer">.*?</footer>', re.S)
 BAND = re.compile(r'<div class="sp-bar"><div class="sp-in">.*?</nav>(?:<a class="sp-login"[^>]*>Log in</a>)?</div></div>',
                   re.S)
+
+
+def with_footer(text: str, foot: str, name: str) -> str:
+    """Refresh the STEMEd+ footer, or add it before the first </body> after the band."""
+    new, n = FOOTER.subn(lambda m: foot, text)
+    if n:
+        return new
+    band = BAND.search(text)
+    end = text.find("</body>", band.end())
+    if end == -1:
+        raise ValueError(f"{name}: no </body> after the STEMEd+ band to put the footer before")
+    return text[:end] + foot + "\n" + text[end:]
 
 
 def plan(site: Path) -> tuple:
@@ -50,6 +68,14 @@ def plan(site: Path) -> tuple:
         new, n = BAND.subn(lambda m: band, text)
         if n == 0:
             raise ValueError(f"{b['file']}: no STEMEd+ band found")
+        if b.get("footer", True):
+            new = with_footer(new, sp_bar.footer(menu), b["file"])
+        if path.suffix == ".py":
+            try:
+                compile(new, str(path), "exec")
+            except SyntaxError as exc:
+                raise ValueError(f"{b['file']}: would no longer be valid Python ({exc.msg}, line {exc.lineno}); "
+                                 "give its page a footer slot, '<footer class=\"sp-footer\"></footer>'") from exc
         texts[path] = new
     copies = []
     for d in config.get("asset_dirs", []):

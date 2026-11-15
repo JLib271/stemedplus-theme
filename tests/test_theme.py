@@ -86,5 +86,56 @@ class ApplyTests(unittest.TestCase):
             self.assertIn("updated site/index.html", run.stdout)
 
 
+class FooterTests(unittest.TestCase):
+    def test_footer_matches_stemedplus_org(self):
+        foot = sp_bar.footer()
+        self.assertTrue(foot.startswith('<footer class="sp-footer">'))
+        for text in ("Knowledge Commons", "OAC-2226271", "DRL-2321946", "OAC-2531819", "Jenison Fund"):
+            self.assertIn(text, foot)
+
+    def test_footer_is_added_once_below_the_page_and_then_refreshed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            page = f"<html><body>{OLD_BAND}<main>Hi</main><footer>Site footer</footer></body></html>"
+            site = make_site(Path(tmp), {"bars": [{"file": "site/index.html", "current": FUNDING}]}, page)
+            self.assertEqual(apply.main(["apply", str(site)]), 0)
+            self.assertEqual(apply.main(["apply", str(site)]), 0)
+            html = (site / "site" / "index.html").read_text()
+            self.assertEqual(html.count('class="sp-footer"'), 1)
+            self.assertLess(html.index("Site footer"), html.index('class="sp-footer"'))
+            self.assertLess(html.index('class="sp-footer"'), html.index("</body>"))
+
+    def test_footer_can_be_left_off(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            site = make_site(Path(tmp), {"bars": [{"file": "site/index.html", "current": FUNDING, "footer": False}]})
+            apply.main(["apply", str(site)])
+            self.assertNotIn("sp-footer", (site / "site" / "index.html").read_text())
+
+    def test_page_without_body_end_changes_nothing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            site = make_site(Path(tmp), {"bars": [{"file": "site/index.html", "current": FUNDING}]},
+                             f"<html><body>{OLD_BAND}<main>Hi</main>")
+            before = (site / "site" / "index.html").read_text()
+            self.assertEqual(apply.main(["apply", str(site)]), 1)
+            self.assertEqual((site / "site" / "index.html").read_text(), before)
+
+    def test_python_template_that_would_break_changes_nothing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            site = make_site(Path(tmp), {"bars": [{"file": "build.py", "current": FUNDING}]})
+            src = f"BAR = '{OLD_BAND}'\nPAGE = [\"<main>\", \"</body>\"]\n"
+            (site / "build.py").write_text(src)
+            self.assertEqual(apply.main(["apply", str(site)]), 1)
+            self.assertEqual((site / "build.py").read_text(), src)
+
+    def test_python_template_footer_slot_is_filled(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            site = make_site(Path(tmp), {"bars": [{"file": "build.py", "current": FUNDING}]})
+            (site / "build.py").write_text(f"BAR = '{OLD_BAND}'\nFOOT = '<footer class=\"sp-footer\"></footer>'\n"
+                                           "PAGE = [\"<main>\", FOOT, \"</body>\"]\n")
+            self.assertEqual(apply.main(["apply", str(site)]), 0)
+            namespace = {}
+            exec((site / "build.py").read_text(), namespace)
+            self.assertIn("OAC-2226271", namespace["FOOT"])
+
+
 if __name__ == "__main__":
     unittest.main()
