@@ -33,7 +33,6 @@ site at its next build** (most sites build daily).
 | Professional Learning | [stemed-professional-learning](https://github.com/JLib271/stemed-professional-learning) |
 | Faculty Development | [stemed-faculty-development](https://github.com/JLib271/stemed-faculty-development) |
 | Deadlines | [stemed-deadlines](https://github.com/JLib271/stemed-deadlines) |
-| Find Collaborators | [stemed-collaborators](https://github.com/JLib271/stemed-collaborators) |
 | HuMeta Library | [humeta-library](https://github.com/JLib271/humeta-library) |
 
 ## Adding a site
