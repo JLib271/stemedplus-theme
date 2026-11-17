@@ -29,7 +29,7 @@ class MenuTests(unittest.TestCase):
     def test_menu_is_valid_and_lists_every_site(self):
         menu = sp_bar.load_menu()
         urls = [s["url"] for item in menu["items"] for s in item.get("submenu", [])]
-        for site in ("stemed-funding", "STEMEd-Digest", "stemed-deadlines", "stemed-faculty-development"):
+        for site in ("stemed-funding", "STEMEd-Digest", "stemed-deadlines", "stemed-professional-development"):
             self.assertTrue(any(site in u for u in urls), site)
 
     def test_band_marks_the_current_site(self):

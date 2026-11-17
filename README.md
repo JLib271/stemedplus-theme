@@ -30,8 +30,7 @@ site at its next build** (most sites build daily).
 | STEMEd+ Digest | [STEMEd-Digest](https://github.com/JLib271/STEMEd-Digest) |
 | Graduate Programs | [stem-ed-research-programs](https://github.com/JLib271/stem-ed-research-programs) |
 | Conferences | [stemed-conferences](https://github.com/JLib271/stemed-conferences) |
-| Professional Learning | [stemed-professional-learning](https://github.com/JLib271/stemed-professional-learning) |
-| Faculty Development | [stemed-faculty-development](https://github.com/JLib271/stemed-faculty-development) |
+| Professional Development | [stemed-professional-development](https://github.com/JLib271/stemed-professional-development) |
 | Deadlines | [stemed-deadlines](https://github.com/JLib271/stemed-deadlines) |
 | Find Collaborators | [stemed-collaborators](https://github.com/JLib271/stemed-collaborators) |
 | HuMeta Library | [humeta-library](https://github.com/JLib271/humeta-library) |
