@@ -22,6 +22,10 @@
             {
               "label": "Professional Development",
               "url": "https://jlib271.github.io/stemed-professional-development/"
+            },
+            {
+              "label": "Where to Publish",
+              "url": "https://jlib271.github.io/STEMEd-Digest/publish.html"
             }
           ]
         },
@@ -43,10 +47,6 @@
             {
               "label": "Deadlines",
               "url": "https://jlib271.github.io/stemed-deadlines/"
-            },
-            {
-              "label": "Where to Publish",
-              "url": "https://jlib271.github.io/STEMEd-Digest/publish.html"
             }
           ]
         },
