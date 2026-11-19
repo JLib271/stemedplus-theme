@@ -133,23 +133,23 @@
             },
             {
               "label": "Share a Funding Opportunity",
-              "url": "https://github.com/JLib271/stemed-funding/issues/new?template=suggest_opportunity.yml"
+              "url": "https://jlib271.github.io/stemed-funding/#add"
             },
             {
               "label": "Add a Conference",
-              "url": "https://github.com/JLib271/stemed-conferences/issues/new?template=suggest_conference.yml"
+              "url": "https://jlib271.github.io/stemed-conferences/#add"
             },
             {
               "label": "Add a Professional Development Program",
-              "url": "https://github.com/JLib271/stemed-professional-development/issues/new?template=suggest_program.yml"
+              "url": "https://jlib271.github.io/stemed-professional-development/#add"
             },
             {
               "label": "Add a Graduate Program",
-              "url": "https://github.com/JLib271/stem-ed-research-programs/issues/new?template=add_program.yml"
+              "url": "https://jlib271.github.io/stem-ed-research-programs/#add"
             },
             {
               "label": "Suggest a Journal",
-              "url": "https://github.com/JLib271/stemed-digest/issues/new?template=suggest_journal.yml"
+              "url": "https://jlib271.github.io/STEMEd-Digest/publish.html#add"
             }
           ]
         }
