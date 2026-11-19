@@ -108,11 +108,11 @@
       "submenu": [
         {
           "label": "Add a work to the Library",
-          "url": "https://works.hcommons.org/uploads/new"
+          "url": "https://works.hcommons.org/uploads/new?community=stemedplus&page=1"
         },
         {
           "label": "STEMEd+ Data",
-          "url": "https://works.hcommons.org/collections/stemedplus"
+          "url": "https://works.hcommons.org/collections/stemedplus-data/?q=&l=list&p=1&s=10&sort=newest"
         },
         {
           "label": "Your groups and sites",
