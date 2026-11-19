@@ -84,22 +84,32 @@
     },
     {
       "label": "Build",
-      "submenu": [
+      "groups": [
         {
-          "label": "Your profile",
-          "url": "https://stemedplus.profile.hcommons.org/edit-profile/"
+          "heading": "For you",
+          "links": [
+            {
+              "label": "Your profile",
+              "url": "https://stemedplus.profile.hcommons.org/edit-profile/"
+            },
+            {
+              "label": "A collection",
+              "url": "https://works.hcommons.org/collections/stemedplus"
+            }
+          ]
         },
         {
-          "label": "A group",
-          "url": "https://stemedplus.org/stemed-groups/"
-        },
-        {
-          "label": "A site",
-          "url": "https://stemedplus.org/sites/"
-        },
-        {
-          "label": "A collection",
-          "url": "https://works.hcommons.org/collections/stemedplus"
+          "heading": "For your team",
+          "links": [
+            {
+              "label": "A group",
+              "url": "https://stemedplus.org/stemed-groups/"
+            },
+            {
+              "label": "A site",
+              "url": "https://stemedplus.org/sites/"
+            }
+          ]
         }
       ]
     },
@@ -153,34 +163,44 @@
     {
       "label": "About",
       "url": "https://stemedplus.org/about/",
-      "submenu": [
+      "groups": [
         {
-          "label": "About",
-          "url": "https://stemedplus.org/about/"
+          "heading": "Who we are",
+          "links": [
+            {
+              "label": "About STEMEd+",
+              "url": "https://stemedplus.org/about/"
+            },
+            {
+              "label": "Vision & Research",
+              "url": "https://stemedplus.org/vision-research/"
+            },
+            {
+              "label": "Governance",
+              "url": "https://stemedplus.org/learn-more/"
+            },
+            {
+              "label": "Partner with Us",
+              "url": "https://stemedplus.org/collaborate/"
+            }
+          ]
         },
         {
-          "label": "Governance",
-          "url": "https://stemedplus.org/learn-more/"
-        },
-        {
-          "label": "Vision & Research",
-          "url": "https://stemedplus.org/vision-research/"
-        },
-        {
-          "label": "Partner with Us",
-          "url": "https://stemedplus.org/collaborate/"
-        },
-        {
-          "label": "Contact Us",
-          "url": "https://stemedplus.org/contact-us/"
-        },
-        {
-          "label": "FAQ",
-          "url": "https://stemedplus.org/stemed-commons-frequently-asked-questions/"
-        },
-        {
-          "label": "Help & Support",
-          "url": "https://support.hcommons.org/"
+          "heading": "Get help",
+          "links": [
+            {
+              "label": "FAQ",
+              "url": "https://stemedplus.org/stemed-commons-frequently-asked-questions/"
+            },
+            {
+              "label": "Help & Support",
+              "url": "https://support.hcommons.org/"
+            },
+            {
+              "label": "Contact Us",
+              "url": "https://stemedplus.org/contact-us/"
+            }
+          ]
         }
       ]
     },
