@@ -44,7 +44,7 @@ class MenuTests(unittest.TestCase):
         band = sp_bar.bar(FUNDING)
         self.assertIn('class="sp-has sp-has-mega sp-here"', band)
         self.assertIn('<button type="button" class="sp-label" aria-haspopup="true">Find</button>', band)
-        for heading in ("Careers &amp; learning", "Research &amp; funding", "People &amp; communities", "Library"):
+        for heading in ("Careers &amp; Learning", "Research &amp; Funding", "People &amp; Communities", "Library"):
             self.assertIn(f'<p class="sp-head">{heading}</p>', band)
         self.assertIn('<li class="sp-btn"><a href="https://stemedplus.org/join-stemed/">Join STEMEd+</a></li>', band)
 

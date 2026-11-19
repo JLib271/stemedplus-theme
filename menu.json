@@ -9,7 +9,7 @@
       "label": "Find",
       "groups": [
         {
-          "heading": "Careers & learning",
+          "heading": "Careers & Learning",
           "links": [
             {
               "label": "Jobs (The Seekers’ Hub)",
@@ -30,7 +30,7 @@
           ]
         },
         {
-          "heading": "Research & funding",
+          "heading": "Research & Funding",
           "links": [
             {
               "label": "Funding",
@@ -51,18 +51,18 @@
           ]
         },
         {
-          "heading": "People & communities",
+          "heading": "People & Communities",
           "links": [
             {
               "label": "Find Collaborators",
               "url": "https://jlib271.github.io/stemed-collaborators/"
             },
             {
-              "label": "Groups to join",
+              "label": "Groups to Join",
               "url": "https://stemedplus.org/stemed-groups/"
             },
             {
-              "label": "Sites to explore",
+              "label": "Sites to Explore",
               "url": "https://stemedplus.org/sites/"
             },
             {
@@ -86,23 +86,23 @@
       "label": "Build",
       "groups": [
         {
-          "heading": "For you & your team",
+          "heading": "For You & Your Team",
           "links": [
             {
-              "label": "Your profile",
+              "label": "Set Up Your Profile",
               "url": "https://stemedplus.profile.hcommons.org/edit-profile/"
             },
             {
-              "label": "A group",
-              "url": "https://stemedplus.org/stemed-groups/"
+              "label": "Create a Group",
+              "url": "https://stemedplus.org/stemed-groups/create/step/group-details/"
             },
             {
-              "label": "A site",
-              "url": "https://stemedplus.org/sites/"
+              "label": "Create a Site",
+              "url": "https://stemedplus.org/sites/create/"
             },
             {
-              "label": "A collection",
-              "url": "https://works.hcommons.org/collections/stemedplus"
+              "label": "Request a Collection",
+              "url": "https://stemedplus.org/contact-us/"
             }
           ]
         }
@@ -112,10 +112,10 @@
       "label": "Share",
       "groups": [
         {
-          "heading": "Your work",
+          "heading": "Your Work",
           "links": [
             {
-              "label": "Add a work to the Library",
+              "label": "Add a Work to the Library",
               "url": "https://works.hcommons.org/uploads/new?community=stemedplus&page=1"
             },
             {
@@ -128,27 +128,27 @@
           "heading": "Opportunities",
           "links": [
             {
-              "label": "Post a job",
+              "label": "Post a Job",
               "url": "https://theseekershub.stemedplus.org/submit-a-position/"
             },
             {
-              "label": "Share a funding opportunity",
+              "label": "Share a Funding Opportunity",
               "url": "https://github.com/JLib271/stemed-funding/issues/new?template=suggest_opportunity.yml"
             },
             {
-              "label": "Add a conference",
+              "label": "Add a Conference",
               "url": "https://github.com/JLib271/stemed-conferences/issues/new?template=suggest_conference.yml"
             },
             {
-              "label": "Add a professional development program",
+              "label": "Add a Professional Development Program",
               "url": "https://github.com/JLib271/stemed-professional-development/issues/new?template=suggest_program.yml"
             },
             {
-              "label": "Add a graduate program",
+              "label": "Add a Graduate Program",
               "url": "https://github.com/JLib271/stem-ed-research-programs/issues/new?template=add_program.yml"
             },
             {
-              "label": "Suggest a journal",
+              "label": "Suggest a Journal",
               "url": "https://github.com/JLib271/stemed-digest/issues/new?template=suggest_journal.yml"
             }
           ]
@@ -160,7 +160,7 @@
       "url": "https://stemedplus.org/about/",
       "groups": [
         {
-          "heading": "Who we are",
+          "heading": "Who We Are",
           "links": [
             {
               "label": "About STEMEd+",
@@ -181,7 +181,7 @@
           ]
         },
         {
-          "heading": "Get help",
+          "heading": "Get Help",
           "links": [
             {
               "label": "FAQ",
