@@ -90,8 +90,9 @@ def bar(current: str = "", logo: str = "stemedplus-commons-logo-white.png", menu
             cols = "".join(f'<div class="sp-group"><p class="sp-head">{e(g["heading"])}</p><ul>'
                            + "".join(f"<li>{a(s['label'], s['url'])}</li>" for s in g["links"]) + "</ul></div>"
                            for g in groups)
-            items.append(f'<li class="sp-has sp-has-mega{" sp-here" if here else ""}">{top(item, here)}{CHEVRON}'
-                         f'<div class="sp-sub sp-mega">{cols}</div></li>')
+            wide = len(groups) >= 3          # Find: a full-width panel; Share: a smaller one under its label
+            items.append(f'<li class="sp-has{" sp-has-mega" if wide else ""}{" sp-here" if here else ""}">{top(item, here)}{CHEVRON}'
+                         f'<div class="sp-sub sp-mega{"" if wide else " sp-mega-small"}">{cols}</div></li>')
         elif sub:
             here = any(current and s["url"] == current for s in sub)
             subs = "".join(f"<li>{a(s['label'], s['url'])}</li>" for s in sub)

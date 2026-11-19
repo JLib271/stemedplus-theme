@@ -105,18 +105,48 @@
     },
     {
       "label": "Share",
-      "submenu": [
+      "groups": [
         {
-          "label": "Add a work to the Library",
-          "url": "https://works.hcommons.org/uploads/new?community=stemedplus&page=1"
+          "heading": "Your work",
+          "links": [
+            {
+              "label": "Add a work to the Library",
+              "url": "https://works.hcommons.org/uploads/new?community=stemedplus&page=1"
+            },
+            {
+              "label": "STEMEd+ Data",
+              "url": "https://works.hcommons.org/collections/stemedplus-data/?q=&l=list&p=1&s=10&sort=newest"
+            }
+          ]
         },
         {
-          "label": "STEMEd+ Data",
-          "url": "https://works.hcommons.org/collections/stemedplus-data/?q=&l=list&p=1&s=10&sort=newest"
-        },
-        {
-          "label": "Your groups and sites",
-          "url": "https://stemedplus.org/stemed-groups/"
+          "heading": "Opportunities",
+          "links": [
+            {
+              "label": "Post a job",
+              "url": "https://theseekershub.stemedplus.org/submit-a-position/"
+            },
+            {
+              "label": "Share a funding opportunity",
+              "url": "https://github.com/JLib271/stemed-funding/issues/new?template=suggest_opportunity.yml"
+            },
+            {
+              "label": "Add a conference",
+              "url": "https://github.com/JLib271/stemed-conferences/issues/new?template=suggest_conference.yml"
+            },
+            {
+              "label": "Add a professional development program",
+              "url": "https://github.com/JLib271/stemed-professional-development/issues/new?template=suggest_program.yml"
+            },
+            {
+              "label": "Add a graduate program",
+              "url": "https://github.com/JLib271/stem-ed-research-programs/issues/new?template=add_program.yml"
+            },
+            {
+              "label": "Suggest a journal",
+              "url": "https://github.com/JLib271/stemed-digest/issues/new?template=suggest_journal.yml"
+            }
+          ]
         }
       ]
     },
