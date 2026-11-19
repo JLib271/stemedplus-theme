@@ -1,8 +1,9 @@
 """The green STEMEd+ Commons band at the top of every STEMEd+ site, and the footer at the bottom.
 
-The band copies the menu of https://stemedplus.org (same items, same order, same submenus) so the
-GitHub Pages sites look like part of that site. The menu itself is in menu.json; when the
-stemedplus.org menu changes, change menu.json and every site picks it up on its next build.
+The band carries the STEMEd+ Commons menu (Start here, Find, Build, Share, About, Join) so the GitHub
+Pages sites look like part of stemedplus.org. The menu itself is in menu.json; change it there and every
+site picks it up on its next build. An item can be a link; a link or label with a "submenu" list; a label
+with "groups" (headed lists, shown together in one wide panel, as Find is); or a link with "button": true.
 
 The footer copies stemedplus.org's footer (what STEMEd+ Commons is, and its NSF and MSU support);
 its text is the "footer" entry of menu.json.
@@ -32,10 +33,21 @@ def load_menu(path: Path = MENU_FILE) -> dict:
     items = menu.get("items")
     if not isinstance(items, list) or not items:
         raise ValueError("menu.json: items must be a non-empty list")
+    def check(entry, url_required=True):
+        url = entry.get("url")
+        if not entry.get("label") or (url is None and url_required) or (url is not None and not str(url).startswith("https://")):
+            raise ValueError(f"menu.json: every item needs a label and an https:// url: {entry!r}")
+
     for item in items:
-        for entry in [item] + list(item.get("submenu", [])):
-            if not entry.get("label") or not str(entry.get("url", "")).startswith("https://"):
-                raise ValueError(f"menu.json: every item needs a label and an https:// url: {entry!r}")
+        opens = bool(item.get("submenu") or item.get("groups"))
+        check(item, url_required=not opens)       # a label that only opens a menu needs no page of its own
+        for entry in item.get("submenu", []):
+            check(entry)
+        for group in item.get("groups", []):
+            if not group.get("heading") or not group.get("links"):
+                raise ValueError(f"menu.json: every group needs a heading and links: {group!r}")
+            for entry in group["links"]:
+                check(entry)
     footer = menu.get("footer")
     if not isinstance(footer, str) or not footer.strip():
         raise ValueError("menu.json: footer must be the footer's HTML")
@@ -62,14 +74,31 @@ def bar(current: str = "", logo: str = "stemedplus-commons-logo-white.png", menu
         cur = ' aria-current="page"' if current and url == current else ""
         return f'<a href="{e(url)}"{cur}>{e(label)}</a>'
 
+    def top(item, here):
+        """The top-level entry: a link, or (for a label with no page) a button that opens its menu."""
+        if item.get("url"):
+            return a(item["label"], item["url"])
+        return f'<button type="button" class="sp-label" aria-haspopup="true">{e(item["label"])}</button>'
+
     items = []
     for item in menu["items"]:
         sub = item.get("submenu", [])
-        if sub:
+        groups = item.get("groups", [])
+        if groups:
+            links = [s for g in groups for s in g["links"]]
+            here = any(current and s["url"] == current for s in links)
+            cols = "".join(f'<div class="sp-group"><p class="sp-head">{e(g["heading"])}</p><ul>'
+                           + "".join(f"<li>{a(s['label'], s['url'])}</li>" for s in g["links"]) + "</ul></div>"
+                           for g in groups)
+            items.append(f'<li class="sp-has sp-has-mega{" sp-here" if here else ""}">{top(item, here)}{CHEVRON}'
+                         f'<div class="sp-sub sp-mega">{cols}</div></li>')
+        elif sub:
             here = any(current and s["url"] == current for s in sub)
             subs = "".join(f"<li>{a(s['label'], s['url'])}</li>" for s in sub)
-            items.append(f'<li class="sp-has{" sp-here" if here else ""}">{a(item["label"], item["url"])}{CHEVRON}'
+            items.append(f'<li class="sp-has{" sp-here" if here else ""}">{top(item, here)}{CHEVRON}'
                          f'<ul class="sp-sub">{subs}</ul></li>')
+        elif item.get("button"):
+            items.append(f'<li class="sp-btn">{a(item["label"], item["url"])}</li>')
         else:
             items.append(f"<li>{a(item['label'], item['url'])}</li>")
     return (

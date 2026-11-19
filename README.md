@@ -13,7 +13,7 @@ site at its next build** (most sites build daily).
 
 | File | What it is |
 |---|---|
-| `menu.json` | The stemedplus.org menu: items, submenus, and the Log in link. **Edit this when the stemedplus.org menu changes.** |
+| `menu.json` | The STEMEd+ Commons menu: Start here, Find (one wide panel of headed groups), Build, Share, About, and a Join button, plus the Log in link. An item can be a link, a link or label with a `submenu`, a label with `groups` (each a `heading` and `links`), or a link with `"button": true`. Every site picks up changes on its next build. |
 | `sp_bar.py` | Builds the green band's HTML from `menu.json`, marking the current site's menu item. Needs no JavaScript. `python sp_bar.py <site-url>` prints it. |
 | `apply.py` | Updates a site's copies: rebuilds each band and refreshes each theme file the site already has. |
 | `assets/stemedplus-theme.css` | Load after a site's own styles. Colors, fonts, buttons, the join box, and the green band. |

@@ -52,6 +52,20 @@ a { color: var(--sp-green); }
 .sp-sub a[aria-current="page"] { text-decoration: underline; }
 .sp-has:hover > .sp-sub, .sp-has:focus-within > .sp-sub { visibility: visible; opacity: 1; }
 .sp-has:hover > .sp-chev, .sp-has:focus-within > .sp-chev { transform: rotate(180deg); }
+.sp-label { font: inherit; color: #fff; background: none; border: 0; padding: 0; cursor: pointer; }
+.sp-label:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.sp-has.sp-here > .sp-label { text-decoration: underline; }
+/* Find: one wide panel under the band, with headed groups side by side (no second layer of menus). */
+.sp-bar .sp-in { position: relative; }
+.sp-top > li.sp-has-mega { position: static; }
+.sp-mega { left: 10px; right: 10px; top: calc(100% - 18px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+           gap: 8px 28px; padding: 18px 24px 20px; border-radius: 0 0 12px 12px; box-shadow: 0 12px 28px rgba(0, 0, 0, .18); }
+.sp-mega ul { list-style: none; margin: 0; padding: 0; }
+.sp-mega a { padding: 6px 0; white-space: normal; font-weight: 600; color: var(--sp-green); }
+.sp-head { margin: 0 0 4px; padding-bottom: 6px; border-bottom: 2px solid #d7ead7; font-size: 12px; font-weight: 800;
+           letter-spacing: .08em; text-transform: uppercase; color: #4a564a; }
+.sp-btn a { display: inline-block; background: var(--sp-rust); color: #fff; border-radius: 9999px; padding: 7px 18px; font-weight: 800; }
+.sp-btn a:hover, .sp-btn a:focus-visible { text-decoration: none; filter: brightness(1.12); }
 .sp-login { flex: none; font-size: 18px; font-weight: 700; text-decoration: underline; }
 .sp-toggle { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .sp-burger { display: none; cursor: pointer; color: #fff; margin: 0; font-size: 16px; font-weight: 700; align-items: center; gap: 8px; margin-left: auto; }
@@ -79,8 +93,13 @@ a { color: var(--sp-green); }
   .sp-top { display: block; padding: 6px 0 10px; }
   .sp-top > li { display: block; padding: 6px 0; }
   .sp-chev { display: none; }
-  .sp-sub { position: static; visibility: visible; opacity: 1; background: none; border: 0; min-width: 0; padding: 2px 0 0 16px; }
+  .sp-nav .sp-sub { position: static; visibility: visible; opacity: 1; background: none; border: 0; min-width: 0; padding: 2px 0 0 16px; }
   .sp-sub a { color: #fff; padding: 4px 0; white-space: normal; font-weight: 500; }
+  .sp-label { font-size: 18px; font-weight: 600; cursor: default; }
+  .sp-mega { display: block; box-shadow: none; padding: 2px 0 0 16px; border-radius: 0; }
+  .sp-mega a { color: #fff; font-weight: 500; padding: 3px 0; }
+  .sp-head { color: #cfe5cf; border: 0; margin: 8px 0 2px; padding: 0; }
+  .sp-btn { padding-top: 10px !important; }
   .sp-login { font-size: 16px; }
 }
 

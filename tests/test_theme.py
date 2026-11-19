@@ -29,14 +29,33 @@ class MenuTests(unittest.TestCase):
     def test_menu_is_valid_and_lists_every_site(self):
         menu = sp_bar.load_menu()
         urls = [s["url"] for item in menu["items"] for s in item.get("submenu", [])]
-        for site in ("stemed-funding", "STEMEd-Digest", "stemed-deadlines", "stemed-professional-development"):
+        urls += [s["url"] for item in menu["items"] for g in item.get("groups", []) for s in g["links"]]
+        for site in ("stemed-funding", "STEMEd-Digest", "stemed-deadlines", "stemed-professional-development",
+                     "stemed-collaborators", "stemed-conferences", "stem-ed-research-programs"):
             self.assertTrue(any(site in u for u in urls), site)
 
     def test_band_marks_the_current_site(self):
         band = sp_bar.bar(FUNDING)
         self.assertIn(f'href="{FUNDING}" aria-current="page"', band)
-        self.assertIn('class="sp-has sp-here"', band)
+        self.assertIn('sp-here"', band)
         self.assertEqual(band.count('aria-current="page"'), 1)
+
+    def test_find_is_one_grouped_panel(self):
+        band = sp_bar.bar(FUNDING)
+        self.assertIn('class="sp-has sp-has-mega sp-here"', band)
+        self.assertIn('<button type="button" class="sp-label" aria-haspopup="true">Find</button>', band)
+        for heading in ("Careers &amp; learning", "Research &amp; funding", "People &amp; communities", "Library"):
+            self.assertIn(f'<p class="sp-head">{heading}</p>', band)
+        self.assertIn('<li class="sp-btn"><a href="https://stemedplus.org/join-stemed/">Join STEMEd+</a></li>', band)
+
+    def test_group_without_heading_is_refused(self):
+        with tempfile.TemporaryDirectory() as d:
+            bad = Path(d) / "menu.json"
+            menu = sp_bar.load_menu()
+            menu["items"] = [{"label": "Find", "groups": [{"links": [{"label": "A", "url": "https://a.org/"}]}]}]
+            bad.write_text(json.dumps(menu))
+            with self.assertRaises(ValueError):
+                sp_bar.load_menu(bad)
 
     def test_bad_menu_is_refused(self):
         with tempfile.TemporaryDirectory() as d:
