@@ -40,7 +40,7 @@ import sp_bar  # noqa: E402
 ASSETS = HERE / "assets"
 CONFIG = ".stemedplus-theme.json"
 FOOTER = re.compile(r'<footer class="sp-footer">.*?</footer>', re.S)
-BAND = re.compile(r'<div class="sp-bar"><div class="sp-in">.*?</nav>(?:<a class="sp-login"[^>]*>Log in</a>)?</div></div>',
+BAND = re.compile(r'<div class="sp-bar"><div class="sp-in">.*?</nav>(?:<a class="sp-login"[^>]*>Log [iI]n</a>)?</div></div>',
                   re.S)
 
 

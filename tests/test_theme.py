@@ -156,5 +156,13 @@ class FooterTests(unittest.TestCase):
             self.assertIn("OAC-2226271", namespace["FOOT"])
 
 
+
+class LoginSpellingTests(unittest.TestCase):
+    def test_band_is_found_with_either_login_spelling(self):
+        import apply
+        for label in ("Log in", "Log In"):
+            page = f'<div class="sp-bar"><div class="sp-in">x</nav><a class="sp-login" href="y">{label}</a></div></div>'
+            self.assertTrue(apply.BAND.search(page), label)
+
 if __name__ == "__main__":
     unittest.main()
