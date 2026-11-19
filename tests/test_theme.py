@@ -13,7 +13,7 @@ import sp_bar  # noqa: E402
 
 FUNDING = "https://jlib271.github.io/stemed-funding/"
 OLD_BAND = ('<div class="sp-bar"><div class="sp-in"><a class="sp-logo" href="https://stemedplus.org/">old</a>'
-            '<nav class="sp-nav">old menu</nav><a class="sp-login" href="x">Log in</a></div></div>')
+            '<nav class="sp-nav">old menu</nav><a class="sp-login" href="x">Log In</a></div></div>')
 
 
 def make_site(tmp: Path, config: dict, page: str = None) -> Path:
