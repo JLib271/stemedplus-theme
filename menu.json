@@ -86,21 +86,12 @@
       "label": "Build",
       "groups": [
         {
-          "heading": "For you",
+          "heading": "For you & your team",
           "links": [
             {
               "label": "Your profile",
               "url": "https://stemedplus.profile.hcommons.org/edit-profile/"
             },
-            {
-              "label": "A collection",
-              "url": "https://works.hcommons.org/collections/stemedplus"
-            }
-          ]
-        },
-        {
-          "heading": "For your team",
-          "links": [
             {
               "label": "A group",
               "url": "https://stemedplus.org/stemed-groups/"
@@ -108,6 +99,10 @@
             {
               "label": "A site",
               "url": "https://stemedplus.org/sites/"
+            },
+            {
+              "label": "A collection",
+              "url": "https://works.hcommons.org/collections/stemedplus"
             }
           ]
         }
