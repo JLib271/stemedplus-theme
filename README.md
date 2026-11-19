@@ -76,3 +76,15 @@ python sp_bar.py https://jlib271.github.io/stemed-funding/
 This repository was split out of [HuMeta](https://github.com/JLib271/HuMeta), where it lived in
 `standard/stemedplus_theme/`. The shared discipline list (`stemedplus_disciplines.json`) is part of
 the HuMeta profile, in [humeta-profile](https://github.com/JLib271/humeta-profile).
+
+## Publishing rule for every STEMEd+ site
+
+Each site's GitHub Pages workflow builds first and publishes later, in two jobs:
+
+1. **build**: build the site, refresh the shared look, and upload it with `actions/upload-pages-artifact`.
+2. **publish** (`needs: build`): only `actions/deploy-pages`, with `pages: write` and `id-token: write`.
+
+Never upload and publish in the same job. Publishing right after the upload sometimes finds no upload
+yet, and re-running such a job uploads a second copy, which the publish step then refuses. With two jobs,
+"Re-run failed jobs" just publishes the same build again. If the workflow already has a top-level
+`concurrency: group: pages`, do not repeat that group on the publish job: it would wait on itself.
