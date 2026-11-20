@@ -12,8 +12,8 @@
           "heading": "Careers & Learning",
           "links": [
             {
-              "label": "Jobs (The Seekers’ Hub)",
-              "url": "https://theseekershub.stemedplus.org/"
+              "label": "Jobs",
+              "url": "https://jlib271.github.io/stemed-jobs/"
             },
             {
               "label": "Graduate Programs",
@@ -129,7 +129,7 @@
           "links": [
             {
               "label": "Post a Job",
-              "url": "https://theseekershub.stemedplus.org/submit-a-position/"
+              "url": "https://jlib271.github.io/stemed-jobs/#add"
             },
             {
               "label": "Share a Funding Opportunity",

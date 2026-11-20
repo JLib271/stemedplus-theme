@@ -25,7 +25,7 @@ site at its next build** (most sites build daily).
 
 | Site | Repository |
 |---|---|
-| The Seekers' Hub (Jobs) | [stemed-jobs](https://github.com/JLib271/stemed-jobs) |
+| STEMEd+ Jobs | [stemed-jobs](https://github.com/JLib271/stemed-jobs) |
 | Find Funding | [stemed-funding](https://github.com/JLib271/stemed-funding) |
 | STEMEd+ Digest | [STEMEd-Digest](https://github.com/JLib271/STEMEd-Digest) |
 | Graduate Programs | [stem-ed-research-programs](https://github.com/JLib271/stem-ed-research-programs) |
