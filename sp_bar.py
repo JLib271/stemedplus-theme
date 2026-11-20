@@ -109,7 +109,7 @@ def bar(current: str = "", logo: str = "stemedplus-commons-logo-white.png", menu
         '<input type="checkbox" id="sp-menu-toggle" class="sp-toggle">'
         '<label for="sp-menu-toggle" class="sp-burger"><span class="sp-burger-icon" aria-hidden="true"></span>Menu</label>'
         f'<nav class="sp-nav" aria-label="STEMEd+ Commons"><ul class="sp-top">{"".join(items)}</ul></nav>'
-        f'<a class="sp-login" href="{e(menu["login"])}">Log In</a>'
+        f'<a class="sp-login" href="{e(menu["login"])}">Log in</a>'
         '</div></div>'
     )
 
