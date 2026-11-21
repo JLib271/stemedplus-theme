@@ -202,15 +202,18 @@
           "links": [
             {
               "label": "Terms of Service",
-              "url": "https://about.hcommons.org/terms-of-service/"
+              "url": "https://about.hcommons.org/terms-of-service/",
+              "new_tab": true
             },
             {
               "label": "Privacy Statement",
-              "url": "https://about.hcommons.org/privacy-statement/"
+              "url": "https://about.hcommons.org/privacy-statement/",
+              "new_tab": true
             },
             {
               "label": "Guidelines for Use",
-              "url": "https://about.hcommons.org/guidelines-for-use/"
+              "url": "https://about.hcommons.org/guidelines-for-use/",
+              "new_tab": true
             }
           ]
         }

@@ -70,9 +70,11 @@ def bar(current: str = "", logo: str = "stemedplus-commons-logo-white.png", menu
     menu = menu or load_menu()
     e = html.escape
 
-    def a(label, url):
+    def a(label, url, new_tab=False):
         cur = ' aria-current="page"' if current and url == current else ""
-        return f'<a href="{e(url)}"{cur}>{e(label)}</a>'
+        tab = ' target="_blank" rel="noopener"' if new_tab else ""
+        sr = '<span class="sp-sr"> (opens in a new tab)</span>' if new_tab else ""
+        return f'<a href="{e(url)}"{cur}{tab}>{e(label)}{sr}</a>'
 
     def top(item, here):
         """The top-level entry: a link, or (for a label with no page) a button that opens its menu."""
@@ -88,10 +90,10 @@ def bar(current: str = "", logo: str = "stemedplus-commons-logo-white.png", menu
             links = [s for g in groups for s in g["links"]]
             here = any(current and s["url"] == current for s in links)
             cols = "".join(f'<div class="sp-group"><p class="sp-head">{e(g["heading"])}</p><ul>'
-                           + "".join(f"<li>{a(s['label'], s['url'])}</li>" for s in g["links"]) + "</ul></div>"
+                           + "".join(f"<li>{a(s['label'], s['url'], s.get('new_tab', False))}</li>" for s in g["links"]) + "</ul></div>"
                            for g in groups)
-            wide = len(groups) >= 3          # Find: a full-width panel; Share: a smaller one under its label; Build: one column
-            size = "" if wide else (" sp-mega-small sp-mega-one" if len(groups) == 1 else " sp-mega-small")
+            wide = len(groups) >= 4          # Find: a full-width panel; About: three columns; Share: two; Build: one
+            size = "" if wide else {1: " sp-mega-small sp-mega-one", 3: " sp-mega-small sp-mega-three"}.get(len(groups), " sp-mega-small")
             items.append(f'<li class="sp-has{" sp-has-mega" if wide else ""}{" sp-here" if here else ""}">{top(item, here)}{CHEVRON}'
                          f'<div class="sp-sub sp-mega{size}">{cols}</div></li>')
         elif sub:
