@@ -196,6 +196,23 @@
               "url": "https://stemedplus.org/contact-us/"
             }
           ]
+        },
+        {
+          "heading": "Policies",
+          "links": [
+            {
+              "label": "Terms of Service",
+              "url": "https://about.hcommons.org/terms-of-service/"
+            },
+            {
+              "label": "Privacy Statement",
+              "url": "https://about.hcommons.org/privacy-statement/"
+            },
+            {
+              "label": "Guidelines for Use",
+              "url": "https://about.hcommons.org/guidelines-for-use/"
+            }
+          ]
         }
       ]
     },
