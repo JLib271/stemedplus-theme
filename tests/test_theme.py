@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT))
 import apply  # noqa: E402
 import sp_bar  # noqa: E402
 
-FUNDING = "https://jlib271.github.io/stemed-funding/"
+FUNDING = "https://stemedplus.github.io/stemed-funding/"
 OLD_BAND = ('<div class="sp-bar"><div class="sp-in"><a class="sp-logo" href="https://stemedplus.org/">old</a>'
             '<nav class="sp-nav">old menu</nav><a class="sp-login" href="x">Log In</a></div></div>')
 

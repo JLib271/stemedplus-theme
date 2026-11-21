@@ -3,7 +3,7 @@
   "items": [
     {
       "label": "Why STEMEd+?",
-      "url": "https://jlib271.github.io/stemed-start-here/"
+      "url": "https://stemedplus.github.io/stemed-start-here/"
     },
     {
       "label": "Find",
@@ -13,19 +13,19 @@
           "links": [
             {
               "label": "Jobs",
-              "url": "https://jlib271.github.io/stemed-jobs/"
+              "url": "https://stemedplus.github.io/stemed-jobs/"
             },
             {
               "label": "Graduate Programs",
-              "url": "https://jlib271.github.io/stem-ed-research-programs/"
+              "url": "https://stemedplus.github.io/stem-ed-research-programs/"
             },
             {
               "label": "Professional Development",
-              "url": "https://jlib271.github.io/stemed-professional-development/"
+              "url": "https://stemedplus.github.io/stemed-professional-development/"
             },
             {
               "label": "Where to Publish",
-              "url": "https://jlib271.github.io/STEMEd-Digest/publish.html"
+              "url": "https://stemedplus.github.io/STEMEd-Digest/publish.html"
             }
           ]
         },
@@ -34,19 +34,19 @@
           "links": [
             {
               "label": "Funding",
-              "url": "https://jlib271.github.io/stemed-funding/"
+              "url": "https://stemedplus.github.io/stemed-funding/"
             },
             {
               "label": "Digest",
-              "url": "https://jlib271.github.io/STEMEd-Digest/"
+              "url": "https://stemedplus.github.io/STEMEd-Digest/"
             },
             {
               "label": "Conferences",
-              "url": "https://jlib271.github.io/stemed-conferences/"
+              "url": "https://stemedplus.github.io/stemed-conferences/"
             },
             {
               "label": "Deadlines",
-              "url": "https://jlib271.github.io/stemed-deadlines/"
+              "url": "https://stemedplus.github.io/stemed-deadlines/"
             }
           ]
         },
@@ -55,7 +55,7 @@
           "links": [
             {
               "label": "Find Collaborators",
-              "url": "https://jlib271.github.io/stemed-collaborators/"
+              "url": "https://stemedplus.github.io/stemed-collaborators/"
             },
             {
               "label": "Groups to Join",
@@ -129,27 +129,27 @@
           "links": [
             {
               "label": "Post a Job",
-              "url": "https://jlib271.github.io/stemed-jobs/#add"
+              "url": "https://stemedplus.github.io/stemed-jobs/#add"
             },
             {
               "label": "Share a Funding Opportunity",
-              "url": "https://jlib271.github.io/stemed-funding/#add"
+              "url": "https://stemedplus.github.io/stemed-funding/#add"
             },
             {
               "label": "Add a Conference",
-              "url": "https://jlib271.github.io/stemed-conferences/#add"
+              "url": "https://stemedplus.github.io/stemed-conferences/#add"
             },
             {
               "label": "Add a Professional Development Program",
-              "url": "https://jlib271.github.io/stemed-professional-development/#add"
+              "url": "https://stemedplus.github.io/stemed-professional-development/#add"
             },
             {
               "label": "Add a Graduate Program",
-              "url": "https://jlib271.github.io/stem-ed-research-programs/#add"
+              "url": "https://stemedplus.github.io/stem-ed-research-programs/#add"
             },
             {
               "label": "Suggest a Journal",
-              "url": "https://jlib271.github.io/STEMEd-Digest/publish.html#add"
+              "url": "https://stemedplus.github.io/STEMEd-Digest/publish.html#add"
             }
           ]
         }

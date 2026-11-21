@@ -25,15 +25,15 @@ site at its next build** (most sites build daily).
 
 | Site | Repository |
 |---|---|
-| STEMEd+ Jobs | [stemed-jobs](https://github.com/JLib271/stemed-jobs) |
-| Find Funding | [stemed-funding](https://github.com/JLib271/stemed-funding) |
-| STEMEd+ Digest | [STEMEd-Digest](https://github.com/JLib271/STEMEd-Digest) |
-| Graduate Programs | [stem-ed-research-programs](https://github.com/JLib271/stem-ed-research-programs) |
-| Conferences | [stemed-conferences](https://github.com/JLib271/stemed-conferences) |
-| Professional Development | [stemed-professional-development](https://github.com/JLib271/stemed-professional-development) |
-| Deadlines | [stemed-deadlines](https://github.com/JLib271/stemed-deadlines) |
-| Find Collaborators | [stemed-collaborators](https://github.com/JLib271/stemed-collaborators) |
-| HuMeta Library | [humeta-library](https://github.com/JLib271/humeta-library) |
+| STEMEd+ Jobs | [stemed-jobs](https://github.com/stemedplus/stemed-jobs) |
+| Find Funding | [stemed-funding](https://github.com/stemedplus/stemed-funding) |
+| STEMEd+ Digest | [STEMEd-Digest](https://github.com/stemedplus/STEMEd-Digest) |
+| Graduate Programs | [stem-ed-research-programs](https://github.com/stemedplus/stem-ed-research-programs) |
+| Conferences | [stemed-conferences](https://github.com/stemedplus/stemed-conferences) |
+| Professional Development | [stemed-professional-development](https://github.com/stemedplus/stemed-professional-development) |
+| Deadlines | [stemed-deadlines](https://github.com/stemedplus/stemed-deadlines) |
+| Find Collaborators | [stemed-collaborators](https://github.com/stemedplus/stemed-collaborators) |
+| HuMeta Library | [humeta-library](https://github.com/stemedplus/humeta-library) |
 
 ## Adding a site
 
@@ -45,7 +45,7 @@ site at its next build** (most sites build daily).
    ```json
    {
      "asset_dirs": ["site"],
-     "bars": [{"file": "site/index.html", "current": "https://jlib271.github.io/your-site/"}]
+     "bars": [{"file": "site/index.html", "current": "https://stemedplus.github.io/your-site/"}]
    }
    ```
 
@@ -58,7 +58,7 @@ site at its next build** (most sites build daily).
    - name: Refresh the shared STEMEd+ look
      continue-on-error: true
      run: |
-       git clone --depth 1 https://github.com/JLib271/stemedplus-theme.git "$RUNNER_TEMP/stemedplus-theme"
+       git clone --depth 1 https://github.com/stemedplus/stemedplus-theme.git "$RUNNER_TEMP/stemedplus-theme"
        python "$RUNNER_TEMP/stemedplus-theme/apply.py" .
    ```
 
@@ -70,12 +70,12 @@ site at its next build** (most sites build daily).
 
 ```bash
 python -m unittest discover -s tests -v
-python sp_bar.py https://jlib271.github.io/stemed-funding/
+python sp_bar.py https://stemedplus.github.io/stemed-funding/
 ```
 
-This repository was split out of [HuMeta](https://github.com/JLib271/HuMeta), where it lived in
+This repository was split out of [HuMeta](https://github.com/stemedplus/HuMeta), where it lived in
 `standard/stemedplus_theme/`. The shared discipline list (`stemedplus_disciplines.json`) is part of
-the HuMeta profile, in [humeta-profile](https://github.com/JLib271/humeta-profile).
+the HuMeta profile, in [humeta-profile](https://github.com/stemedplus/humeta-profile).
 
 ## Publishing rule for every STEMEd+ site
 

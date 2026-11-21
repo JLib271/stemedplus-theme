@@ -9,7 +9,7 @@ The site lists what to update in `.stemedplus-theme.json` at its root:
     {
       "asset_dirs": ["site"],
       "bars": [
-        {"file": "site/index.html", "current": "https://jlib271.github.io/stemed-funding/"}
+        {"file": "site/index.html", "current": "https://stemedplus.github.io/stemed-funding/"}
       ]
     }
 
